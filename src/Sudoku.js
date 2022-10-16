@@ -7,7 +7,8 @@ export default class Sudoku extends React.Component{
 
         let puzzle     = sudoku.makepuzzle();
         let solution   = sudoku.solvepuzzle(puzzle);
-        let difficulty = sudoku.ratepuzzle(puzzle, 4);
+        // let difficulty = sudoku.ratepuzzle(puzzle, 4);
+        sudoku.ratepuzzle(puzzle, 4);
 
         let elements=this.generateElements(puzzle,puzzle,-1)
         let table=this.generateTable(elements,9)
@@ -80,7 +81,7 @@ export default class Sudoku extends React.Component{
         let res=[]
         for (let i = 0; i < puzzle.length; i++) {
             // console.log(i)
-            if (puzzle[i]!=null){
+            if (puzzle[i]!==null){
                 res.push(
                     <div style={{
                         border:"1px solid black",
@@ -99,7 +100,7 @@ export default class Sudoku extends React.Component{
                 )
             }
             else {
-                if (i==currentSelect){
+                if (i===currentSelect){
                     res.push(
                         <div style={{
                             border:"1px solid black",
